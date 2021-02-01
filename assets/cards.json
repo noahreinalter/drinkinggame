@@ -1,0 +1,625 @@
+[
+ {
+   "Text": "Drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Select two players to drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Flip a coin. Heads, each player drinks once. Tails, you drink once for each other player.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink a shot",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose any two players to arm wrestle. Loser drinks twice",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink twice for each female player",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "A player of your choosing must drink twice. The players sitting to their left and right must each drink once",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "A player of your choice must run 3 laps around the room",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Loudly moan with pleasure or drink RANDOMNUMBER sips",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Pick a player to play rock paper scissors with. Loser drinks once. For each tie, everyone except you must drink (to a maximum of RANDOMNUMBER rounds)",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Do push-ups. For each 10 push-ups you do, everyone else must drink. After you're done, drink once",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose a player. They must take a shot using only their mouth. If they spill any of it, they drink once",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose two players. Player A must take a bodyshot off player B",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Pick a player. They must stick their arms out and stand on one foot with one eye closed for 10 seconds. If they fail, they must drink. If they succeeds, everyone else drinks twice",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Everyone stands upright. You spin around once and drink once. The player to your left spins arount twice and drinks twice and so on",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose a player and try to guess their underwear color. If this color appears anywhere on their underwear, they drink four times. Otherwise, you drink twice",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose a player. They must take a shot, then fall off their chair",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Select a player. They must lift a player of their choice onto their shoulders. If they can't keep it up for 15 seconds, both must drink twice. Otherwise, all other players must drink twice",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Each turn, you choose someone to drink once. Ends after 6 turns",
+   "How many turns": 6,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "This player drinks double the normally required amount for the next 4 turns",
+   "How many turns": 4,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "All other players drink along with you for the next 6 turns",
+   "How many turns": 6,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "For every time you have to drink, everyone else must put their thumb on a flat surface. The last to do so must drink. Ends after 5 turns",
+   "How many turns": 5,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You must play with your dominant arm behind your back.For every time you use it for anything, you drink once. Ends after 6 turns",
+   "How many turns": 6,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You must move, talk and drink in slow-motion for the next 4 turns",
+   "How many turns": 4,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Select two players. They must each drink twice, then high-five",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You choose a nickname. Anyone caught referring to you by your real name must drink. Ends after 8 turns",
+   "How many turns": 8,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Waterfall: Every player, beginning with you (then clockwise) starts drinking and they may only stop when the player to their right stops. The first player may choose when to stop first.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Question Master: Any player that answers PLAYER's questions must drink unless they say \"fuck you!\" before answering. Ends after 10 turns",
+   "How many turns": 10,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Select a player to flip a coin until they get two 'heads' in a row. For each 'tails', he must drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You must walk around in a silly manner. Everyone else drinks",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You have 6 seconds to draw a spider with a smiley on its face and the correct amount of legs. If you succeed, everyone else must drink. If you fail you must drink once for each other player",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose a player. RANDOMPLAYER must put an ice cube in that player's clothes.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Everyone spanks you. Everybody that doesn't must drink RANDOMNUMBER sips",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Select two players to have a staring contest. First one to smile or look away drinks twice",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose a player that has to <i>make out with/hump</i> a poster, object, or wall for at least 10 seconds. If they obey everyone else must drink 4 sips. If they disobey they must drink 6 sips themselves",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You must balance a coin on your nose. Anytime it falls of, must drink. You may only interrupt this for drinking. Ends after 3 turns",
+   "How many turns": 3,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose two players to dance together sensually and slowly to a song. Cheers to their sex appeal. Everyone else takes a sip",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You must drink twice for each male player",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You may not call anyone by their real name. If you do, you must drink. Ends in 6 turns",
+   "How many turns": 6,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Choose a player to try to toss something into a glass at least 2m away. If they succeed, everyone drinks once. If they miss, they drink once for each other player",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Order a pizza. If you don't want to you are not drunk enough drink 5 sips.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "You must drink for every month that your brithday is away from January (shortest distance)",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "PLAYER has the Holy Grail. Every time they drink at least one person needs to say 'Deus vult'. If nobody says it everyone except you must drink. Ends in 8 turns",
+   "How many turns": 8,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "Ask RANDOMPLAYER an embarrassing question. If that player doesn't want to answer the question they must drink RANDOMNUMBER sips",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Try to run through a wall. Drink RANDOMNUMBER unless you end up on platform 9 3/4.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "Give every player a hug",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "RANDOMPLAYER has to bite your earlobes tenderly",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Let soemone throw a glass of water in your face or drink a whole glass of your current drink (or something equal)",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Howl at the moon",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Deepthroat a bottle as far as you can",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Take off two pieces of clothing and socks don't count you cowards",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Do a forward tumble",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Suck RANDOMPLAYER's thumb for at least 3 seconds",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink 3 sips and distribute 6 sips",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Write your name on a wall using your ass",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Remove one piece of clothing, except socks. No one wants to smell your feet",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Pick a player who has to remove one piece of clothing. Your socks may only be taken off if that's the only thing you're left wearing",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "The player to your right has to squeeze your boobs, alternatively you must take a shot",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": true,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "The player to your left must finish your drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Pick up to three players to be mates (you may also choose yourself as one). If one of them needs to drink, they all do. Ends after 10 turns",
+   "How many turns": 10,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Make a rule. Ends after 10 turns",
+   "How many turns": 10,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Tell an embarrassing story about yourself",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Everyone drinks once except for you",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Mix a drink for the person to your right. Everyone else must applaude the future bartender",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Never have I ever (one question)",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Pick a mate. If one of you drinks the other one must drink as well. Ends after 10 turns",
+   "How many turns": 10,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Make a rule. Ends after 10 turns",
+   "How many turns": 10,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Everyone taller than you drinks",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Give out 6 shots to a maximum of 2 per player",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Give out RANDOMNUMBER shots to a maximum of 2 per player",
+   "How many turns": -1,
+   "Shots": true,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Give RANDOMPLAYER a kiss",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Truth, dare, or drink. Choose two",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Drink RANDOMNUMBER sips",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "RANDOMPLAYER must finish your drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Mix a drink for RANDOMPLAYER. Enjoy your drink with caution",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "PLAYER vs RANDOMPLAYER. Han Solo shot first, whoever shoots the other with finger guns wins. The loser must take the shot like Greedo.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "You are in this drinking game but we do not grant you the rank of giving out sips or shots (for 7 turns). Take a seat, Young Skywalker!",
+   "How many turns": 7,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "They're taking the Hobbits to Isengard. Pick up the smallest player and carry them once across the room.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "You have RANDOMPLAYER's sword. And RANDOMPLAYER's bow. And RANDOMPLAYER's AXE! PLAYER must drink one sip from each of these glasses to earn their support.",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "Every time PLAYER yawns for the next 4 turns they must drink each time",
+   "How many turns": 4,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "If Christmas is less than a month away PLAYER may assign three little elf helpers to drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Dobby is a free elf! Everytime PLAYER would have to drink, they may reassign the amount to someone else. You are back to being a slave to this game after 4 turns",
+   "How many turns": 4,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "Everybody must present PLAYER their socks for he is Dobby. Anyone that doesn't have a matching pair must drink",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ },
+ {
+   "Text": "PLAYER must drink once for every two countries they've travelled to",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": false
+ },
+ {
+   "Text": "Seize the means of intoxication! PLAYER gathers all other drinks and reassigns them as PLAYER wants to. Everyone takes a sip. Then they go back to their original owners",
+   "How many turns": -1,
+   "Shots": false,
+   "NSFW": false,
+   "References and Inside Jokes": true
+ }
+]
