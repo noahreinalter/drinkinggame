@@ -6,6 +6,6 @@ Complete Remake of https://github.com/ConnerSherman/drinkinggame
 
 Android:
 
-iOS / Web:
+iOS / Web: https://drinkinggame.netlify.app/
 
 Version 1.0.0
