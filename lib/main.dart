@@ -151,13 +151,14 @@ class FirstPage extends StatelessWidget {
                   ),
                 ),
                 FlatButton(
-                    onPressed: () {showAboutDialog(context: context);},
+                    onPressed: () {
+                      showAboutDialog(context: context);
+                    },
                     child: Text(
                       "Copyright",
                       style: TextStyle(
-                        color: hyperlinkColor,
-                        decoration: TextDecoration.underline
-                      ),
+                          color: hyperlinkColor,
+                          decoration: TextDecoration.underline),
                     ))
               ],
             ),
