@@ -10,10 +10,10 @@ import 'package:package_info/package_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 //TODO Make a Database and don't use json
 
-int numberOfPlayers;
-List<String> names;
-List<dynamic> cards;
-List<dynamic> npcards;
+late int numberOfPlayers;
+List<String> names = [];
+late List<dynamic> cards;
+late List<dynamic> npcards;
 List<Map<String, dynamic>> notPlayedCards = [];
 List<Map<String, dynamic>> notPlayedNpcards = [];
 List<String> categories = [
@@ -35,7 +35,7 @@ final inputFieldColor = createMaterialColor(Color(0xFFF0F0F0));
 final textColor = Colors.black;
 
 const source =
-    "https://github.com/noahreinalter/drinkinggame"; //TODO Change Source
+    "https://github.com/noahreinalter/drinkinggame";
 
 void main() {
   runApp(MainApp());
@@ -96,8 +96,8 @@ class FirstPage extends StatelessWidget {
                   child: TextFormField(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (input) {
-                      numberOfPlayers = int.tryParse(input);
-                      if (numberOfPlayers != null && numberOfPlayers >= 2) {
+                      numberOfPlayers = int.tryParse(input ?? "0") ?? 0;
+                      if (numberOfPlayers >= 2) {
                         return null;
                       } else {
                         return "Not enough Players";
@@ -110,17 +110,14 @@ class FirstPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (numberOfPlayers != null && numberOfPlayers >= 2) {
+                    if (numberOfPlayers >= 2) {
                       List<String> oldNames;
-                      if (names != null) {
-                        oldNames = [...names];
-                      }
+                      oldNames = [...names];
+                      
                       names = new List.filled(numberOfPlayers, "");
                       for (int i = 0; i < numberOfPlayers; i++) {
-                        if (oldNames != null) {
-                          if (i < oldNames.length) {
-                            names[i] = oldNames[i];
-                          }
+                        if (i < oldNames.length) {
+                          names[i] = oldNames[i];
                         }
                       }
                       Navigator.push(
@@ -142,7 +139,7 @@ class FirstPage extends StatelessWidget {
                   builder:
                       (BuildContext context, AsyncSnapshot<String> snapshot) =>
                           Text(
-                    snapshot.hasData ? snapshot.data : "Loading ...",
+                    snapshot.hasData ? snapshot.data! : "Loading ...",
                     style: TextStyle(color: textColor),
                   ),
                 ),
@@ -197,7 +194,7 @@ class _SecondPageState extends State<SecondPage> {
       child: ElevatedButton(
         onPressed: () {
           for (int i = 0; i < numberOfPlayers; i++) {
-            if (names[i] == null || names[i] == "") {
+            if (names[i] == "") {
               return;
             }
           }
@@ -262,7 +259,7 @@ class ThirdPage extends StatelessWidget {
               }
             }
             if (add) {
-              notPlayedCards.add(cards[i]);
+              notPlayedCards.add(new Map.from(cards[i]));
             }
           }
           for (int i = 0; i < npcards.length; i++) {
@@ -275,7 +272,7 @@ class ThirdPage extends StatelessWidget {
               }
             }
             if (add) {
-              notPlayedNpcards.add(npcards[i]);
+              notPlayedNpcards.add(new Map.from(npcards[i]));
             }
           }
           Navigator.push(
@@ -311,16 +308,16 @@ class CardPages extends StatefulWidget {
 }
 
 class _CardPagesState extends State<CardPages> {
-  MaterialColor _backgroundColor;
+  late MaterialColor _backgroundColor;
   static const maxTurnsTillNonPlayerCard = 5;
   int turnsTillNonPlayerCard = Random().nextInt(maxTurnsTillNonPlayerCard) + 1;
   List multiTurnsCardTracker = [];
-  Map _currentCard;
-  Card _card;
+  late Map _currentCard;
+  late Card _card;
   int _turn = -1;
   int _round = 0;
 
-  Map findFirstElementZero() {
+  Map? findFirstElementZero() {
     for (int i = 0; i < multiTurnsCardTracker.length; i++) {
       if (multiTurnsCardTracker[i][categories[1]] == 0) {
         Map cache = multiTurnsCardTracker[i];
@@ -344,7 +341,7 @@ class _CardPagesState extends State<CardPages> {
     possibleNames.removeAt(_turn);
 
     while (text.contains("RANDOMNUMBER")) {
-      text = text.replaceFirst("RANDOMNUMBER", Random().nextInt(10).toString());
+      text = text.replaceFirst("RANDOMNUMBER", (Random().nextInt(10)+1).toString());
     }
     while (text.contains("RANDOMPLAYER")) {
       if (possibleNames.length != 0) {
@@ -373,7 +370,7 @@ class _CardPagesState extends State<CardPages> {
 
   String secondText() {
     if (_card == Card.card) {
-      return "Round" + (_round).toString();
+      return "Round " + (_round).toString();
     } else if (_card == Card.npcard) {
       return "";
     } else {
@@ -383,7 +380,7 @@ class _CardPagesState extends State<CardPages> {
 
   @override
   Widget build(BuildContext context) {
-    Map cache = findFirstElementZero();
+    Map? cache = findFirstElementZero();
     if (cache != null) {
       _currentCard = cache;
       _card = Card.endcard;
@@ -484,7 +481,7 @@ class _CardPagesState extends State<CardPages> {
 }
 
 class CustomTextForm extends StatelessWidget {
-  CustomTextForm({Key key, @required this.customTextFormIndex})
+  CustomTextForm({Key? key, required this.customTextFormIndex})
       : super(key: key);
 
   final int customTextFormIndex;
@@ -510,10 +507,10 @@ class CustomTextForm extends StatelessWidget {
                 contentPadding: const EdgeInsets.all(0)),
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (input) {
-              names[customTextFormIndex] = input;
-              if (input != null) {
+              if(input != null){
+                names[customTextFormIndex] = input;
                 return null;
-              } else {
+              }else{
                 return "";
               }
             },
@@ -527,7 +524,7 @@ class CustomTextForm extends StatelessWidget {
 }
 
 class CustomCheckbox extends StatefulWidget {
-  const CustomCheckbox({Key key, this.customCheckboxState}) : super(key: key);
+  const CustomCheckbox({Key? key, required this.customCheckboxState}) : super(key: key);
 
   final int customCheckboxState;
 
@@ -538,9 +535,7 @@ class CustomCheckbox extends StatefulWidget {
 class _CustomCheckboxState extends State<CustomCheckbox> {
   @override
   Widget build(BuildContext context) {
-    bool _value = activeCategories[widget.customCheckboxState] != null
-        ? activeCategories[widget.customCheckboxState]
-        : false;
+    bool _value = activeCategories[widget.customCheckboxState];
 
     return ConstrainedBox(
       constraints: BoxConstraints(maxWidth: 300),
@@ -549,7 +544,7 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
           value: _value,
           onChanged: (value) {
             setState(() {
-              _value = value;
+              _value = value!;
               activeCategories[widget.customCheckboxState] = value;
             });
           }),
@@ -574,7 +569,7 @@ MaterialColor createMaterialColor(Color color) {
       1,
     );
   });
-  return MaterialColor(color.value, swatch);
+  return MaterialColor(color.value, swatch as Map<int, Color>);
 }
 
 Future<String> getVersionNumber() async {
