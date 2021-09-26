@@ -1,0 +1,24 @@
+name: Build web
+
+on:
+  push
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: 'stable'
+      - run: flutter pub get
+      - run: flutter build web
+      - run: |
+          cp -R ./build ./builds
+          git config user.name Noah Reinalter
+          git config user.email 38698485+noahreinalter@users.noreply.github.com
+          git add .
+          git commit -m "Updated web build"
+          git push
