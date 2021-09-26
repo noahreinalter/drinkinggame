@@ -1,7 +1,7 @@
 name: Build web
 
 on:
-  push
+  push:
   workflow_dispatch:
 
 jobs:
