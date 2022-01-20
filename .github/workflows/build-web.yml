@@ -17,8 +17,8 @@ jobs:
       - run: flutter build web
       - run: |
           cp -R ./build ./builds
-          git config user.name Noah Reinalter
-          git config user.email 38698485+noahreinalter@users.noreply.github.com
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
           git add .
           git commit -m "Updated web build"
           git push
