@@ -8,4 +8,4 @@ Android: https://play.google.com/store/apps/details?id=reinalter.noah.drinkingga
 
 iOS / Web: https://drinkinggame.netlify.app/
 
-Version 1.0.4
+Version 1.0.5
