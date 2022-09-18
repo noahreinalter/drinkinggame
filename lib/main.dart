@@ -1,10 +1,8 @@
 import 'dart:async' show Future;
 import 'dart:convert';
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,28 +23,31 @@ List<String> categories = [
 ];
 List<bool> activeCategories = [true, true, true];
 
-final defaultColor = createMaterialColor(Color(0xFFFFCE73));
-final colorNpCard = createMaterialColor(Color(0xFF73A4FF));
-final colorEnds = createMaterialColor(Color(0xFFFF8873));
-final primaryButtonColor = Colors.green;
-final secondaryButtonColor = Colors.white;
-final hyperlinkColor = createMaterialColor(Color(0xFF007BFF));
-final inputFieldColor = createMaterialColor(Color(0xFFF0F0F0));
-final textColor = Colors.black;
+final defaultColor = createMaterialColor(const Color(0xFFFFCE73));
+final colorNpCard = createMaterialColor(const Color(0xFF73A4FF));
+final colorEnds = createMaterialColor(const Color(0xFFFF8873));
+const primaryButtonColor = Colors.green;
+const secondaryButtonColor = Colors.white;
+final hyperlinkColor = createMaterialColor(const Color(0xFF007BFF));
+final inputFieldColor = createMaterialColor(const Color(0xFFF0F0F0));
+const textColor = Colors.black;
 
-const source =
-    "https://github.com/noahreinalter/drinkinggame";
+const hostSource = "github.com";
+const pathSource = "noahreinalter/drinkinggame";
+final uriSource = Uri(scheme: "https", host: hostSource, path: pathSource);
 
 void main() {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatefulWidget {
+  const MainApp({super.key});
+
   @override
-  _MainAppState createState() => _MainAppState();
+  MainAppState createState() => MainAppState();
 }
 
-class _MainAppState extends State<MainApp> {
+class MainAppState extends State<MainApp> {
   Future<String> loadJsonData() async {
     String jsonText1 = await rootBundle.loadString('assets/cards.json');
     String jsonText2 = await rootBundle.loadString('assets/npcards.json');
@@ -60,21 +61,23 @@ class _MainAppState extends State<MainApp> {
   @override
   void initState() {
     super.initState();
-    this.loadJsonData();
+    loadJsonData();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FirstPage(),
     );
   }
 }
 
 class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return new WillPopScope(
+    return WillPopScope(
       onWillPop: () async => false,
       child: MaterialApp(
         home: Scaffold(
@@ -82,17 +85,17 @@ class FirstPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
+                const Text(
                   "Start new Game",
                   style: TextStyle(fontSize: 40, color: textColor),
                 ),
-                Text(""),
-                Text(
+                const Text(""),
+                const Text(
                   "Number of Players",
                   style: TextStyle(fontSize: 20, color: textColor),
                 ),
                 ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 200),
+                  constraints: const BoxConstraints(maxWidth: 200),
                   child: TextFormField(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (input) {
@@ -105,7 +108,7 @@ class FirstPage extends StatelessWidget {
                     },
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.number,
-                    style: TextStyle(color: textColor),
+                    style: const TextStyle(color: textColor),
                   ),
                 ),
                 ElevatedButton(
@@ -113,8 +116,8 @@ class FirstPage extends StatelessWidget {
                     if (numberOfPlayers >= 2) {
                       List<String> oldNames;
                       oldNames = [...names];
-                      
-                      names = new List.filled(numberOfPlayers, "");
+
+                      names = List.filled(numberOfPlayers, "");
                       for (int i = 0; i < numberOfPlayers; i++) {
                         if (i < oldNames.length) {
                           names[i] = oldNames[i];
@@ -123,16 +126,16 @@ class FirstPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) {
-                          return SecondPage();
+                          return const SecondPage();
                         }),
                       );
                     }
                   },
-                  child: Text("Add Players"),
                   style: ElevatedButton.styleFrom(
-                    primary: primaryButtonColor,
-                    onPrimary: secondaryButtonColor,
+                    foregroundColor: secondaryButtonColor,
+                    backgroundColor: primaryButtonColor,
                   ),
+                  child: const Text("Add Players"),
                 ),
                 FutureBuilder(
                   future: getVersionNumber(),
@@ -140,12 +143,14 @@ class FirstPage extends StatelessWidget {
                       (BuildContext context, AsyncSnapshot<String> snapshot) =>
                           Text(
                     snapshot.hasData ? snapshot.data! : "Loading ...",
-                    style: TextStyle(color: textColor),
+                    style: const TextStyle(color: textColor),
                   ),
                 ),
                 TextButton(
                   onPressed: () async => {
-                    if (await canLaunch(source)) {await launch(source)}
+                    if (!await launchUrl(uriSource,
+                        mode: LaunchMode.externalApplication))
+                      {throw 'Could not launch $uriSource'}
                   },
                   child: Text(
                     "Source",
@@ -154,16 +159,27 @@ class FirstPage extends StatelessWidget {
                         decoration: TextDecoration.underline),
                   ),
                 ),
-                TextButton(
-                    onPressed: () {
-                      showAboutDialog(context: context);
-                    },
-                    child: Text(
-                      "Copyright",
-                      style: TextStyle(
-                          color: hyperlinkColor,
-                          decoration: TextDecoration.underline),
-                    ))
+                FutureBuilder(
+                    future: getVersionNumber(),
+                    builder: (BuildContext context,
+                            AsyncSnapshot<String> snapshot) =>
+                        TextButton(
+                            onPressed: () {
+                              showAboutDialog(
+                                context: context,
+                                applicationName: "Drinkinggame",
+                                applicationVersion: snapshot.hasData
+                                    ? snapshot.data!
+                                    : "Loading ...",
+                                applicationLegalese: "GPL-3.0 License",
+                              );
+                            },
+                            child: Text(
+                              "Copyright",
+                              style: TextStyle(
+                                  color: hyperlinkColor,
+                                  decoration: TextDecoration.underline),
+                            ))),
               ],
             ),
           ),
@@ -176,17 +192,19 @@ class FirstPage extends StatelessWidget {
 
 //TODO Maybe Change to AnimatedList
 class SecondPage extends StatefulWidget {
+  const SecondPage({super.key});
+
   @override
-  _SecondPageState createState() => _SecondPageState();
+  SecondPageState createState() => SecondPageState();
 }
 
-class _SecondPageState extends State<SecondPage> {
+class SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> formWidgets = [];
     for (int i = 0; i < numberOfPlayers; i++) {
       formWidgets.add(ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 200),
+          constraints: const BoxConstraints(maxWidth: 200),
           child: CustomTextForm(customTextFormIndex: i)));
     }
     formWidgets.add(Padding(
@@ -201,21 +219,21 @@ class _SecondPageState extends State<SecondPage> {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
-              return ThirdPage();
+              return const ThirdPage();
             }),
           );
         },
-        child: Text("Confirm Players"),
         style: ElevatedButton.styleFrom(
-          primary: primaryButtonColor,
-          onPrimary: secondaryButtonColor,
+          foregroundColor: secondaryButtonColor,
+          backgroundColor: primaryButtonColor,
         ),
+        child: const Text("Confirm Players"),
       ),
     ));
     return Scaffold(
       body: Center(
         child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 200),
+          constraints: const BoxConstraints(maxWidth: 200),
           child: ListView(
             shrinkWrap: true,
             children: formWidgets,
@@ -228,11 +246,13 @@ class _SecondPageState extends State<SecondPage> {
 }
 
 class ThirdPage extends StatelessWidget {
+  const ThirdPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<Widget> thirdPageWidgets = [];
-    thirdPageWidgets.add(Padding(
-      padding: const EdgeInsets.all(15.0),
+    thirdPageWidgets.add(const Padding(
+      padding: EdgeInsets.all(15.0),
       child: Text(
         "Choose your decks",
         style: TextStyle(fontSize: 30, color: textColor),
@@ -259,7 +279,7 @@ class ThirdPage extends StatelessWidget {
               }
             }
             if (add) {
-              notPlayedCards.add(new Map.from(cards[i]));
+              notPlayedCards.add(Map.from(cards[i]));
             }
           }
           for (int i = 0; i < npcards.length; i++) {
@@ -272,21 +292,21 @@ class ThirdPage extends StatelessWidget {
               }
             }
             if (add) {
-              notPlayedNpcards.add(new Map.from(npcards[i]));
+              notPlayedNpcards.add(Map.from(npcards[i]));
             }
           }
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
-              return CardPages();
+              return const CardPages();
             }),
           );
         },
-        child: Text("Start game"),
         style: ElevatedButton.styleFrom(
-          primary: primaryButtonColor,
-          onPrimary: secondaryButtonColor,
+          foregroundColor: secondaryButtonColor,
+          backgroundColor: primaryButtonColor,
         ),
+        child: const Text("Start game"),
       ),
     ));
 
@@ -303,11 +323,13 @@ class ThirdPage extends StatelessWidget {
 }
 
 class CardPages extends StatefulWidget {
+  const CardPages({super.key});
+
   @override
-  _CardPagesState createState() => _CardPagesState();
+  CardPagesState createState() => CardPagesState();
 }
 
-class _CardPagesState extends State<CardPages> {
+class CardPagesState extends State<CardPages> {
   late MaterialColor _backgroundColor;
   static const maxTurnsTillNonPlayerCard = 5;
   int turnsTillNonPlayerCard = Random().nextInt(maxTurnsTillNonPlayerCard) + 1;
@@ -341,10 +363,11 @@ class _CardPagesState extends State<CardPages> {
     possibleNames.removeAt(_turn);
 
     while (text.contains("RANDOMNUMBER")) {
-      text = text.replaceFirst("RANDOMNUMBER", (Random().nextInt(10)+1).toString());
+      text = text.replaceFirst(
+          "RANDOMNUMBER", (Random().nextInt(10) + 1).toString());
     }
     while (text.contains("RANDOMPLAYER")) {
-      if (possibleNames.length != 0) {
+      if (possibleNames.isNotEmpty) {
         int i = Random().nextInt(possibleNames.length);
         text = text.replaceFirst("RANDOMPLAYER", possibleNames[i]);
         possibleNames.removeAt(i);
@@ -362,7 +385,7 @@ class _CardPagesState extends State<CardPages> {
 
   String firstText() {
     if (_card == Card.card) {
-      return names[_turn] + "s turn";
+      return "${names[_turn]}s turn";
     } else {
       return "";
     }
@@ -370,7 +393,7 @@ class _CardPagesState extends State<CardPages> {
 
   String secondText() {
     if (_card == Card.card) {
-      return "Round " + (_round).toString();
+      return "Round $_round";
     } else if (_card == Card.npcard) {
       return "";
     } else {
@@ -404,7 +427,7 @@ class _CardPagesState extends State<CardPages> {
         notPlayedNpcards.removeAt(i);
         _card = Card.npcard;
         _backgroundColor = colorNpCard;
-        if (notPlayedNpcards.length != 0) {
+        if (notPlayedNpcards.isNotEmpty) {
           turnsTillNonPlayerCard =
               Random().nextInt(maxTurnsTillNonPlayerCard) + 1;
         } else {
@@ -418,7 +441,7 @@ class _CardPagesState extends State<CardPages> {
       }
     }
 
-    return new WillPopScope(
+    return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
         body: Center(
@@ -429,47 +452,48 @@ class _CardPagesState extends State<CardPages> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   firstText(),
-                  style: TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 20),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   secondText(),
-                  style: TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 20),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 300),
+                  constraints: const BoxConstraints(maxWidth: 300),
                   child: Text(
                     _currentCard[categories[0]],
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               ElevatedButton(
                 onPressed: () {
-                  if (notPlayedCards.length == 0) {
+                  if (notPlayedCards.isEmpty) {
                     notPlayedCards = [];
                     notPlayedNpcards = [];
 
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
-                        return FirstPage();
+                        return const FirstPage();
                       }),
                     );
                   } else {
                     setState(() {});
                   }
                 },
-                child: Text("Next Card"),
                 style: ElevatedButton.styleFrom(
-                  primary: primaryButtonColor,
-                  onPrimary: secondaryButtonColor,
+                  foregroundColor: secondaryButtonColor,
+                  backgroundColor: primaryButtonColor,
                 ),
+                child: const Text("Next Card"),
               )
             ],
           ),
@@ -481,7 +505,7 @@ class _CardPagesState extends State<CardPages> {
 }
 
 class CustomTextForm extends StatelessWidget {
-  CustomTextForm({Key? key, required this.customTextFormIndex})
+  const CustomTextForm({Key? key, required this.customTextFormIndex})
       : super(key: key);
 
   final int customTextFormIndex;
@@ -495,8 +519,8 @@ class CustomTextForm extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Player " + (customTextFormIndex + 1).toString(),
-              style: TextStyle(color: textColor),
+              "Player ${customTextFormIndex + 1}",
+              style: const TextStyle(color: textColor),
             ),
           ),
           TextFormField(
@@ -507,10 +531,10 @@ class CustomTextForm extends StatelessWidget {
                 contentPadding: const EdgeInsets.all(0)),
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (input) {
-              if(input != null){
+              if (input != null) {
                 names[customTextFormIndex] = input;
                 return null;
-              }else{
+              } else {
                 return "";
               }
             },
@@ -524,27 +548,28 @@ class CustomTextForm extends StatelessWidget {
 }
 
 class CustomCheckbox extends StatefulWidget {
-  const CustomCheckbox({Key? key, required this.customCheckboxState}) : super(key: key);
+  const CustomCheckbox({Key? key, required this.customCheckboxState})
+      : super(key: key);
 
   final int customCheckboxState;
 
   @override
-  _CustomCheckboxState createState() => _CustomCheckboxState();
+  CustomCheckboxState createState() => CustomCheckboxState();
 }
 
-class _CustomCheckboxState extends State<CustomCheckbox> {
+class CustomCheckboxState extends State<CustomCheckbox> {
   @override
   Widget build(BuildContext context) {
-    bool _value = activeCategories[widget.customCheckboxState];
+    bool customCheckboxValue = activeCategories[widget.customCheckboxState];
 
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 300),
+      constraints: const BoxConstraints(maxWidth: 300),
       child: CheckboxListTile(
           title: Text(categories[widget.customCheckboxState + 2]),
-          value: _value,
+          value: customCheckboxValue,
           onChanged: (value) {
             setState(() {
-              _value = value!;
+              customCheckboxValue = value!;
               activeCategories[widget.customCheckboxState] = value;
             });
           }),
@@ -560,7 +585,7 @@ MaterialColor createMaterialColor(Color color) {
   for (int i = 1; i < 10; i++) {
     strengths.add(0.1 * i);
   }
-  strengths.forEach((strength) {
+  for (var strength in strengths) {
     final double ds = 0.5 - strength;
     swatch[(strength * 1000).round()] = Color.fromRGBO(
       r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -568,7 +593,7 @@ MaterialColor createMaterialColor(Color color) {
       b + ((ds < 0 ? b : (255 - b)) * ds).round(),
       1,
     );
-  });
+  }
   return MaterialColor(color.value, swatch as Map<int, Color>);
 }
 
