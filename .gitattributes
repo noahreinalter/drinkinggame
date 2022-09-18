@@ -1,3 +1,3 @@
-builds/build/web/flutter_service_worker.js linguist-vendored
-builds/build/web/main.dart.js linguist-vendored
-builds/build/web/index.html linguist-vendored
+builds/* linguist-vendored
+android/* linguist-vendored
+ios/* linguist-vendored
