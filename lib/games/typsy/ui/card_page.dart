@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:drinkinggame/games/typsy/player_data.dart';
 import 'package:drinkinggame/games/typsy/ui/player_number_page.dart';
+import 'package:drinkinggame/util/drinkinggame_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -69,10 +70,10 @@ class CardPageState extends State<CardPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Consumer<DeckData>(builder: (context, deckdata, child) {
-      if(deckdata.cardTyp == CardTyp.card) {
-        _turn = (_turn + 1) % Provider.of<PlayerData>(context, listen: false).names.length;
+      if (deckdata.cardTyp == CardTyp.card) {
+        _turn = (_turn + 1) %
+            Provider.of<PlayerData>(context, listen: false).names.length;
         if (_turn == 0) {
           _round++;
         }
@@ -89,7 +90,8 @@ class CardPageState extends State<CardPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    firstText(deckdata.cardTyp, Provider.of<PlayerData>(context, listen: false).names),
+                    firstText(deckdata.cardTyp,
+                        Provider.of<PlayerData>(context, listen: false).names),
                     style: const TextStyle(fontSize: 20),
                   ),
                 ),
@@ -123,12 +125,14 @@ class CardPageState extends State<CardPage> {
                         }),
                       );
                     } else {
-                      deckdata.loadNextCard();
+                      deckdata.loadNextCard(context);
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: secondaryButtonColor,
-                    backgroundColor: primaryButtonColor,
+                    foregroundColor:
+                        DrinkinggameTheme.instance(context).whiteColor,
+                    backgroundColor:
+                        DrinkinggameTheme.instance(context).buttonColor,
                   ),
                   child: const Text("Next Card"),
                 )

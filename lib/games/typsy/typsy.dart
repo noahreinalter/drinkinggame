@@ -12,22 +12,22 @@ class Typsy extends StatefulWidget {
 }
 
 class TypsyState extends State<Typsy> {
-  final DeckData _deckdata = DeckData();
+  final DeckData _deckData = DeckData();
 
   @override
   void initState() {
     super.initState();
-    _deckdata.init();
+    _deckData.init();
   }
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: _deckdata),
+        ChangeNotifierProvider.value(value: _deckData),
         ChangeNotifierProvider(create: (context) => PlayerData()),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         home: PlayerNumberPage(),
       ),
     );

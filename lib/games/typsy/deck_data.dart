@@ -3,18 +3,9 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:drinkinggame/games/typsy/enums/card_typ.dart';
-import 'package:drinkinggame/util/util.dart';
+import 'package:drinkinggame/util/drinkinggame_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-final defaultColor = createMaterialColor(const Color(0xFFFFCE73));
-final colorNpCard = createMaterialColor(const Color(0xFF73A4FF));
-final colorEnds = createMaterialColor(const Color(0xFFFF8873));
-const primaryButtonColor = Colors.green;
-const secondaryButtonColor = Colors.white;
-final hyperlinkColor = createMaterialColor(const Color(0xFF007BFF));
-final inputFieldColor = createMaterialColor(const Color(0xFFF0F0F0));
-const textColor = Colors.black;
 
 //TODO Make a Database and don't use json
 class DeckData extends ChangeNotifier {
@@ -114,19 +105,21 @@ class DeckData extends ChangeNotifier {
     notifyListeners();
   }
 
-  void loadNextCard() {
+  void loadNextCard(BuildContext context) {
     Map? cache = _findFirstEndingCard();
     if (cache != null) {
       _currentCard = cache;
       _cardTyp = CardTyp.endcard;
-      _backgroundColor = colorEnds;
+      _backgroundColor =
+          DrinkinggameTheme.instance(context).tertiaryBackgroundColor;
     } else {
       if (_turnsTillNonPlayerCard != 0) {
         int i = Random().nextInt(_notPlayedCards.length);
         _currentCard = _notPlayedCards[i];
         _notPlayedCards.removeAt(i);
         _cardTyp = CardTyp.card;
-        _backgroundColor = defaultColor;
+        _backgroundColor =
+            DrinkinggameTheme.instance(context).standardBackgroundColor;
         _turnsTillNonPlayerCard--;
         _decrementMultiTurnsCards();
       } else {
@@ -134,7 +127,8 @@ class DeckData extends ChangeNotifier {
         _currentCard = _notPlayedNpcards[i];
         _notPlayedNpcards.removeAt(i);
         _cardTyp = CardTyp.npcard;
-        _backgroundColor = colorNpCard;
+        _backgroundColor =
+            DrinkinggameTheme.instance(context).secondaryBackgroundColor;
         if (_notPlayedNpcards.isNotEmpty) {
           _turnsTillNonPlayerCard =
               Random().nextInt(_maxTurnsTillNonPlayerCard) + 1;

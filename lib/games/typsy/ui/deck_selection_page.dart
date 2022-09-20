@@ -1,19 +1,8 @@
 import 'package:drinkinggame/games/typsy/deck_data.dart';
 import 'package:drinkinggame/games/typsy/ui/card_page.dart';
+import 'package:drinkinggame/util/drinkinggame_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../../../util/util.dart';
-
-
-final defaultColor = createMaterialColor(const Color(0xFFFFCE73));
-final colorNpCard = createMaterialColor(const Color(0xFF73A4FF));
-final colorEnds = createMaterialColor(const Color(0xFFFF8873));
-const primaryButtonColor = Colors.green;
-const secondaryButtonColor = Colors.white;
-final hyperlinkColor = createMaterialColor(const Color(0xFF007BFF));
-final inputFieldColor = createMaterialColor(const Color(0xFFF0F0F0));
-const textColor = Colors.black;
 
 class DeckSelectionPage extends StatelessWidget {
   const DeckSelectionPage({super.key});
@@ -21,11 +10,12 @@ class DeckSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> thirdPageWidgets = [];
-    thirdPageWidgets.add(const Padding(
-      padding: EdgeInsets.all(15.0),
+    thirdPageWidgets.add(Padding(
+      padding: const EdgeInsets.all(15.0),
       child: Text(
         "Choose your decks",
-        style: TextStyle(fontSize: 30, color: textColor),
+        style: TextStyle(
+            fontSize: 30, color: DrinkinggameTheme.instance(context).textColor),
       ),
     ));
 
@@ -42,7 +32,7 @@ class DeckSelectionPage extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Provider.of<DeckData>(context, listen: false).startNewGame();
-          Provider.of<DeckData>(context, listen: false).loadNextCard();
+          Provider.of<DeckData>(context, listen: false).loadNextCard(context);
 
           Navigator.push(
             context,
@@ -52,8 +42,8 @@ class DeckSelectionPage extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          foregroundColor: secondaryButtonColor,
-          backgroundColor: primaryButtonColor,
+          foregroundColor: DrinkinggameTheme.instance(context).whiteColor,
+          backgroundColor: DrinkinggameTheme.instance(context).buttonColor,
         ),
         child: const Text("Start game"),
       ),
@@ -66,7 +56,8 @@ class DeckSelectionPage extends StatelessWidget {
           children: thirdPageWidgets,
         ),
       ),
-      backgroundColor: defaultColor,
+      backgroundColor:
+          DrinkinggameTheme.instance(context).standardBackgroundColor,
     );
   }
 }

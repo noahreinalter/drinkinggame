@@ -1,6 +1,8 @@
 import 'package:drinkinggame/games/typsy/typsy.dart';
+import 'package:drinkinggame/util/drinkinggame_theme.dart';
 import 'package:drinkinggame/util/util.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 final defaultColor = createMaterialColor(const Color(0xFFFFCE73));
 final colorNpCard = createMaterialColor(const Color(0xFF73A4FF));
@@ -16,7 +18,7 @@ const pathSource = "noahreinalter/drinkinggame";
 final uriSource = Uri(scheme: "https", host: hostSource, path: pathSource);
 
 void main() {
-  runApp(const Typsy());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatefulWidget {
@@ -29,8 +31,11 @@ class MainApp extends StatefulWidget {
 class MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Typsy(),
+    return ListenableProvider.value(
+      value: DrinkinggameTheme(),
+      child: const MaterialApp(
+        home: Typsy(),
+      ),
     );
   }
 }

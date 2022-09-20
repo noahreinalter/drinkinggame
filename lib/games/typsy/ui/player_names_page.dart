@@ -1,20 +1,8 @@
 import 'package:drinkinggame/games/typsy/player_data.dart';
 import 'package:drinkinggame/games/typsy/ui/deck_selection_page.dart';
+import 'package:drinkinggame/util/drinkinggame_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../../../util/util.dart';
-
-
-
-final defaultColor = createMaterialColor(const Color(0xFFFFCE73));
-final colorNpCard = createMaterialColor(const Color(0xFF73A4FF));
-final colorEnds = createMaterialColor(const Color(0xFFFF8873));
-const primaryButtonColor = Colors.green;
-const secondaryButtonColor = Colors.white;
-final hyperlinkColor = createMaterialColor(const Color(0xFF007BFF));
-final inputFieldColor = createMaterialColor(const Color(0xFFF0F0F0));
-const textColor = Colors.black;
 
 //TODO Maybe Change to AnimatedList
 class PlayerNamesPage extends StatefulWidget {
@@ -25,11 +13,10 @@ class PlayerNamesPage extends StatefulWidget {
 }
 
 class PlayerNamesPageState extends State<PlayerNamesPage> {
-
   @override
   Widget build(BuildContext context) {
-    int numberOfPlayers = Provider.of<PlayerData>(context, listen: false)
-        .numberOfPlayers;
+    int numberOfPlayers =
+        Provider.of<PlayerData>(context, listen: false).numberOfPlayers;
     List<Widget> formWidgets = [];
     for (int i = 0; i < numberOfPlayers; i++) {
       formWidgets.add(ConstrainedBox(
@@ -41,7 +28,8 @@ class PlayerNamesPageState extends State<PlayerNamesPage> {
       child: ElevatedButton(
         onPressed: () {
           for (int i = 0; i < numberOfPlayers; i++) {
-            if (Provider.of<PlayerData>(context, listen: false).names[i] == "") {
+            if (Provider.of<PlayerData>(context, listen: false).names[i] ==
+                "") {
               return;
             }
           }
@@ -53,8 +41,8 @@ class PlayerNamesPageState extends State<PlayerNamesPage> {
           );
         },
         style: ElevatedButton.styleFrom(
-          foregroundColor: secondaryButtonColor,
-          backgroundColor: primaryButtonColor,
+          foregroundColor: DrinkinggameTheme.instance(context).whiteColor,
+          backgroundColor: DrinkinggameTheme.instance(context).buttonColor,
         ),
         child: const Text("Confirm Players"),
       ),
@@ -69,7 +57,8 @@ class PlayerNamesPageState extends State<PlayerNamesPage> {
           ),
         ),
       ),
-      backgroundColor: defaultColor,
+      backgroundColor:
+          DrinkinggameTheme.instance(context).standardBackgroundColor,
     );
   }
 }
@@ -91,14 +80,15 @@ class CustomTextForm extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               "Player ${customTextFormIndex + 1}",
-              style: const TextStyle(color: textColor),
+              style: TextStyle(
+                  color: DrinkinggameTheme.instance(context).textColor),
             ),
           ),
           TextFormField(
             decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 filled: true,
-                fillColor: inputFieldColor,
+                fillColor: DrinkinggameTheme.instance(context).almostWhiteColor,
                 contentPadding: const EdgeInsets.all(0)),
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (input) {
