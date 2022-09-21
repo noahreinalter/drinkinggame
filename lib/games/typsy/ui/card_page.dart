@@ -121,7 +121,7 @@ class CardPageState extends State<CardPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) {
-                          return PlayerNumberPage();
+                          return const PlayerNumberPage();
                         }),
                       );
                     } else {

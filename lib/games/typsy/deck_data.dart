@@ -53,8 +53,8 @@ class DeckData extends ChangeNotifier {
   CardTyp get cardTyp => _cardTyp;
 
   Future<void> init() async {
-    String jsonText1 = await rootBundle.loadString('assets/cards.json');
-    String jsonText2 = await rootBundle.loadString('assets/npcards.json');
+    String jsonText1 = await rootBundle.loadString('assets/typsy/cards.json');
+    String jsonText2 = await rootBundle.loadString('assets/typsy/npcards.json');
     _cards = json.decode(jsonText1);
     _npcards = json.decode(jsonText2);
   }
