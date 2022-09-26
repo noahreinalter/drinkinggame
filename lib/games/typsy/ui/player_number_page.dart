@@ -1,14 +1,8 @@
 import 'package:drinkinggame/games/typsy/player_data.dart';
 import 'package:drinkinggame/games/typsy/ui/player_names_page.dart';
 import 'package:drinkinggame/util/drinkinggame_theme.dart';
-import 'package:drinkinggame/util/util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-const hostSource = "github.com";
-const pathSource = "noahreinalter/drinkinggame";
-final uriSource = Uri(scheme: "https", host: hostSource, path: pathSource);
 
 class PlayerNumberPage extends StatelessWidget {
   const PlayerNumberPage({super.key});
@@ -89,51 +83,6 @@ class PlayerNumberPage extends StatelessWidget {
                 ),
                 child: const Text("Add Players"),
               ),
-              FutureBuilder(
-                future: getVersionNumber(),
-                builder:
-                    (BuildContext context, AsyncSnapshot<String> snapshot) =>
-                        Text(
-                  snapshot.hasData ? snapshot.data! : "Loading ...",
-                  style: TextStyle(
-                      color: DrinkinggameTheme.instance(context).textColor),
-                ),
-              ),
-              TextButton(
-                onPressed: () async => {
-                  if (!await launchUrl(uriSource,
-                      mode: LaunchMode.externalApplication))
-                    {throw 'Could not launch $uriSource'}
-                },
-                child: Text(
-                  "Source",
-                  style: TextStyle(
-                      color: DrinkinggameTheme.instance(context).hyperlinkColor,
-                      decoration: TextDecoration.underline),
-                ),
-              ),
-              FutureBuilder(
-                  future: getVersionNumber(),
-                  builder:
-                      (BuildContext context, AsyncSnapshot<String> snapshot) =>
-                          TextButton(
-                              onPressed: () {
-                                showAboutDialog(
-                                  context: context,
-                                  applicationName: "Drinkinggame",
-                                  applicationVersion: snapshot.hasData
-                                      ? snapshot.data!
-                                      : "Loading ...",
-                                  applicationLegalese: "GPL-3.0 License",
-                                );
-                              },
-                              child: Text(
-                                "Copyright",
-                                style: TextStyle(
-                                    color: DrinkinggameTheme.instance(context)
-                                        .hyperlinkColor,
-                                    decoration: TextDecoration.underline),
-                              ))),
             ],
           ),
         ),
