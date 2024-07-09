@@ -63,8 +63,7 @@ class DeckSelectionPage extends StatelessWidget {
 }
 
 class CustomCheckbox extends StatefulWidget {
-  const CustomCheckbox({Key? key, required this.customCheckboxState})
-      : super(key: key);
+  const CustomCheckbox({super.key, required this.customCheckboxState});
 
   final int customCheckboxState;
 

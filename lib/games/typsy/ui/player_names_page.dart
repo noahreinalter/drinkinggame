@@ -64,8 +64,7 @@ class PlayerNamesPageState extends State<PlayerNamesPage> {
 }
 
 class CustomTextForm extends StatelessWidget {
-  const CustomTextForm({Key? key, required this.customTextFormIndex})
-      : super(key: key);
+  const CustomTextForm({super.key, required this.customTextFormIndex});
 
   final int customTextFormIndex;
 
