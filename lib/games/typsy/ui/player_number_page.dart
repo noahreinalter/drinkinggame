@@ -17,8 +17,8 @@ class PlayerNumberPage extends StatelessWidget {
   Widget build(BuildContext context) {
     late int numberOfPlayers;
 
-    return WillPopScope(
-      onWillPop: () async => false,
+    return PopScope(
+      canPop: false,
       child: Scaffold(
         body: Center(
           child: Column(

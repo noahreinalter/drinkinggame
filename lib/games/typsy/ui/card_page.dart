@@ -80,8 +80,8 @@ class CardPageState extends State<CardPage> {
       }
       Map currentCard = insertCustomText(deckdata.currentCard);
       deckdata.maybeAddCardToTracker(currentCard);
-      return WillPopScope(
-        onWillPop: () async => false,
+      return PopScope(
+        canPop: false,
         child: Scaffold(
           body: Center(
             child: Column(
