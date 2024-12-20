@@ -44,7 +44,7 @@ flutter_launcher_icons:
   android: false
   ios: true
   background_color_ios: "#ffffff"
-  image_path: "assets/icon.svg"
+  image_path: "assets/icon.png"
   web:
     generate: true
     background_color: "#ffffff"
