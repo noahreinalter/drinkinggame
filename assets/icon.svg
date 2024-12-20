@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="drinkinggame_icon_monochrome.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="2.5232111"
+     inkscape:cx="285.94516"
+     inkscape:cy="263.55306"
+     inkscape:window-width="3840"
+     inkscape:window-height="2066"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch10"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#73a4ff;stop-opacity:0.33149205;"
+         offset="0"
+         id="stop10" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g10"
+       transform="matrix(0.81,0,0,0.81,48.640038,52.344088)">
+      <path
+         id="rect8-5"
+         style="fill:#ff8873;fill-opacity:1;stroke-width:0.875554"
+         inkscape:label="card_1"
+         inkscape:transform-center-x="-112.23321"
+         inkscape:transform-center-y="-125.21863"
+         d="M 372.56645 44.435846 C 372.70636 44.843963 372.87416 45.241492 372.98884 45.658201 C 392.77557 119.43763 412.53209 193.22699 432.30727 267.00967 C 433.7762 271.73987 433.78647 276.94455 432.06272 281.60881 C 429.71201 288.28923 423.99177 293.64964 417.17008 295.55712 C 397.55085 300.82454 377.92851 306.08078 358.30619 311.33714 C 357.13231 312.45609 355.84955 313.46108 354.44932 314.29026 C 354.36576 314.33856 354.28204 314.38657 354.19849 314.43486 L 485.20039 314.43384 C 496.28039 314.43384 505.19919 305.51423 505.19919 294.43423 L 505.19973 64.432622 C 505.19973 53.352622 496.28012 44.433826 485.20012 44.433826 L 372.56645 44.435846 z "
+         transform="rotate(15)" />
+      <path
+         id="rect8-8"
+         style="display:inline;fill:#73a4ff;fill-opacity:1;stroke-width:0.875554"
+         inkscape:label="card_2"
+         d="m 186.00092,120.99929 c -9.34262,0 -17.127,6.35231 -19.34558,14.98361 7.23563,-1.93877 14.47086,-3.87859 21.70621,-5.81839 4.70241,-1.44782 9.87117,-1.43906 14.50376,0.27006 6.71028,2.36139 12.08623,8.122 13.97569,14.9812 19.78873,73.78087 39.54356,147.56968 59.31954,221.35416 1.46769,4.73069 1.47936,9.93845 -0.24595,14.60263 -1.32378,3.76701 -3.74158,7.08353 -6.80218,9.62818 h 56.88658 c 11.08,0 20.00145,-8.92145 20.00145,-20.00145 V 141.00074 c 0,-11.08 -8.92145,-20.00145 -20.00145,-20.00145 z" />
+      <rect
+         style="fill:#ffce73;fill-opacity:1;stroke-width:0.875554"
+         id="rect8"
+         width="180"
+         height="270"
+         x="-10.645265"
+         y="176.94931"
+         ry="20"
+         rx="20"
+         inkscape:label="card_3"
+         inkscape:transform-center-x="112.23322"
+         inkscape:transform-center-y="-125.21863"
+         transform="rotate(-15)" />
+    </g>
+  </g>
+</svg>
