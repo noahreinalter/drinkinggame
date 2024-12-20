@@ -2,6 +2,7 @@ import 'package:drinkinggame/games/typsy/typsy.dart';
 import 'package:drinkinggame/util/drinkinggame_theme.dart';
 import 'package:drinkinggame/util/util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 final defaultColor = createMaterialColor(const Color(0xFFFFCE73));
@@ -31,6 +32,8 @@ class MainApp extends StatefulWidget {
 class MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return ListenableProvider.value(
       value: DrinkinggameTheme(),
       child: const MaterialApp(
