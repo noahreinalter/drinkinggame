@@ -3,7 +3,7 @@
     "short_name": "drinkinggame",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#ffce73",
+    "background_color": "#ffffff",
     "theme_color": "#ffce73",
     "description": "A drinking Game.",
     "orientation": "portrait-primary",
